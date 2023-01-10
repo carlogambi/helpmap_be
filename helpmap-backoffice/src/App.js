@@ -1,6 +1,11 @@
+import { MainContainer } from "./containers/Main";
 
 function App() {
-  return <div className="App">helpmap backoffice page</div>;
+  return (
+    <div>
+      <MainContainer />
+    </div>
+  );
 }
 
 export default App;

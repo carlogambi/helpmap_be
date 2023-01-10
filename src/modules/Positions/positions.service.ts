@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { IPositionSchema, Position } from "src/schemas/place.schema";
+import { IPositionSchema, Position } from "src/schemas/position.schema";
 
 @Injectable()
 export class PositionService {

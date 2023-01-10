@@ -7,7 +7,7 @@ import {
   Put,
   Query,
 } from "@nestjs/common";
-import { IPositionSchema } from "src/schemas/place.schema";
+import { IPositionSchema } from "src/schemas/position.schema";
 import { PositionService } from "./positions.service";
 
 @Controller("positions")
