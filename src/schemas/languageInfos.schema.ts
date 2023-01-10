@@ -1,8 +1,8 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Document } from "mongoose";
 
 @Schema()
-export class Description {
+export class LanguageInfos {
   @Prop()
   placeId: string;
   @Prop()
@@ -21,9 +21,9 @@ export class Description {
   phoneNumbers: string;
 }
 
-export const DescriptionSchema = SchemaFactory.createForClass(Description);
+export const LanguageInfosSchema = SchemaFactory.createForClass(LanguageInfos);
 
-export interface IDescriptionSchema extends Document {
+export interface ILanguageInfosSchema extends Document {
   readonly title: string;
   readonly language: string;
   readonly intro: string;

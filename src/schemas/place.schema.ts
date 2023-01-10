@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 @Schema()
-export class Place {
+export class Position {
   @Prop()
   lat: number;
   @Prop()
@@ -14,9 +14,9 @@ export class Place {
   @Prop()
   images: [string];
 }
-export const PlaceSchema = SchemaFactory.createForClass(Place);
+export const PositionSchema = SchemaFactory.createForClass(Position);
 
-export interface IPlaceSchema extends Document {
+export interface IPositionSchema extends Document {
   readonly lat: number;
   readonly long: number;
   readonly address: string;
