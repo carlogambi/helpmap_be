@@ -7,7 +7,7 @@ import {
   Put,
   Query,
 } from "@nestjs/common";
-import { IPositionSchema } from "src/schemas/position.schema";
+import { IPositionSchema, Position } from "src/schemas/position.schema";
 import { PositionService } from "./positions.service";
 
 @Controller("positions")
@@ -18,7 +18,7 @@ export class PositionsController {
   async getHello(
     @Query("id") id?: string,
     @Query("category") category?: string
-  ): Promise<IPositionSchema[]> {
+  ): Promise<Position[]> {
     return await this.service.list(id, category);
   }
 

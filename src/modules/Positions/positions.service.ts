@@ -7,14 +7,12 @@ import { IPositionSchema, Position } from "src/schemas/position.schema";
 export class PositionService {
   constructor(@InjectModel(Position.name) private model: Model<Position>) {}
 
-  list = async (
-    id?: string,
-    category?: string
-  ): Promise<IPositionSchema[]> => {
+  list = async (id?: string, category?: string): Promise<Position[]> => {
     const query: { id?: string; category?: string } = {};
     if (id) query.id = id;
     if (category) query.category = category;
-    return await this.model.find(query);
+    const response = await this.model.find(query);
+    return response;
   };
 
   create = async (newInfo: IPositionSchema): Promise<boolean> => {

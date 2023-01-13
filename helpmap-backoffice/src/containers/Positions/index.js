@@ -2,14 +2,18 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAllPositions } from "../../calls/fetchAllPositions";
 
-export const MainContainer = (props) => {
-  const mainState = useSelector((state) => state);
+export const PositionsContainer = (props) => {
+  const state = useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      const positionList = await fetchAllPositions();
-      debugger;
+      await fetchAllPositions(dispatch);
     })();
   }, []);
-  return <div>MainContainer</div>;
+  return (
+    <div>
+      MainContainer
+      <p>{JSON.stringify(state, null, "\t")}</p>
+    </div>
+  );
 };

@@ -1,9 +1,11 @@
+import { updatePositonList } from "../containers/slice";
 import { api } from "./config";
 
-export const fetchAllPositions = async () => {
-  const response = await fetch({
+export const fetchAllPositions = async (dispatch) => {
+  const response = await fetch(api.fetchAllPositions.url, {
     method: api.fetchAllPositions.method,
-    url: api.fetchAllPositions.url,
   });
-  return await response.json();
+
+  const list = await response.json();
+  dispatch(updatePositonList(list));
 };
